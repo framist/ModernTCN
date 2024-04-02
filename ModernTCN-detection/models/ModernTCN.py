@@ -97,8 +97,8 @@ class ReparamLargeKernelConv(nn.Module):
         else:
             pad_left = torch.ones(D_out, D_in, pad_length_left) * pad_values
             pad_right = torch.ones(D_out, D_in, pad_length_right) * pad_values
-        x = torch.cat([pad_left,x],dims=-1)
-        x = torch.cat([x,pad_right],dims=-1)
+        x = torch.cat([pad_left,x],dim=-1)
+        x = torch.cat([x,pad_right],dim=-1)
         return x
 
     def get_equivalent_kernel_bias(self):
